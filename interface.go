@@ -1,9 +1,13 @@
 package iredis
 
 import(
-	"github.com/garyburd/redigo/redis"
+	"github.com/gomodule/redigo/redis"
 )
 
 type Pool interface {
-	Get() redis.Conn
+	Get() Conn
+}
+
+type Conn interface{
+	redis.Conn
 }
